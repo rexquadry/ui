@@ -1,0 +1,184 @@
+$blue: #579b9f;
+$green: green;
+$purple: #f0f;
+.qchat{
+    font-size: 14px;
+    --main-color: #333;
+    --bg-color: #ffffff;
+    --grey: #999;
+    --lightgrey: #dedede;
+    --lightblue: #579b9f;
+    --font:"Font Awesome 5 Free";
+    --box-shadow:1px 2px var(--grey);
+
+    max-width: 60em;
+    height: 100vh;
+    color: var(--main-color);
+    background-color: transparent;
+
+    ul{
+        list-style: none;
+        padding-left: 0;
+    }
+    &-wrapper, &-header{
+        border-top-right-radius: 1em;
+        border-top-left-radius: 1em;
+    }
+    &-wrapper{
+        display: grid;
+        grid-template-rows: auto 1fr auto auto;
+        background-color: var(--lightgrey);
+        height: 100vh;
+        border: var(--lightgrey) 1px solid;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+    }
+    &-header{
+        display: flex;
+        justify-content: space-between;
+        background-color: lighten($green, 60);
+        align-items: center;
+        padding: 0 1em;
+        border-bottom: var(--bg-colr) 1px solid;
+        box-shadow: var(--box-shadow);
+    }
+    &-nav{
+        #qchat-nav, .qchat-nav-list{
+            display: none;
+        }
+        &-trigger{
+            &::before{
+                font-family: var(--font);
+                font-weight: 900;
+                content: "\f0c9";
+            }
+        }
+    }
+    &-view-tools{
+        display: flex;
+        > li{
+            button{
+                border: none;
+                background-color: transparent;
+                &::before{
+                    font-family: var(--font);
+                    font-weight: 900;
+                }
+            }
+        }
+        &-minimize button::before{
+            content: "\f068";
+        }
+        &-maximize button::before{
+            content: "\f2d2";
+        }
+        &-close button::before{
+            content: "\f410";
+        }
+    }
+    &-body{
+        position: relative;
+        padding: 1em;
+        overflow: auto;
+        box-shadow: var(--box-shadow);
+    }
+    &-chatlist{
+        display: grid;
+        grid-gap: 2em;
+        margin: 0;
+        > li{
+            display: grid;
+            grid-gap:0.5em 1em;
+            grid-template-columns: 5em 1fr 1fr;
+            grid-template-rows: auto;
+            grid-template-areas: "avatar username time" "avatar body body";
+            align-items: center;
+            width: calc(100% - 5em);
+            background-color: var(--bg-color);
+            padding: 0.5em;
+            border-radius: 0.5em;
+            border-bottom: var(--lightgrey) 1px solid;
+            box-shadow: var(--box-shadow);
+            &.your-post{
+                justify-self: flex-end;
+                grid-template-columns: 1fr 1fr 5em;
+                grid-template-areas: "time username avatar" "body body avatar";
+                text-align: right;
+                background-color: lighten($blue, 30);
+                .qchat-chatlist-time{
+                    text-align: left;
+                }
+            }
+        }
+        &-avatar{
+                grid-area: avatar;
+                border-radius: 50%;
+        }
+        &-username{
+            grid-area: username;
+        }
+        &-time{
+            grid-area: time;
+            color: var(--grey);
+            text-align: right;
+            font-size: 0.7em;
+            &::before{
+                font-family: var(--font);
+                font-weight: 900;
+                content: "\f017";
+            }
+        }
+        &-body{
+            grid-area: body;
+        }
+    }
+    &-typing{
+        position: absolute;
+        &::before{
+            font-family: var(--font);
+            font-weight: 900;
+            content: "\f141";
+            color: var(--grey);
+            margin-left: 1em;
+        }
+    }
+    &-communicate{
+        display: flex;
+        background-color: var(--bg-color);
+        min-height: 7em;
+        border-top: var(--bg-color) 1px solid;
+        &-selectfile, &-submit{
+            background-color: transparent;
+            border: none;
+            font-size: 2em;
+            padding: 0.5em;
+        }
+        &-selectfile{
+            display: flex;
+            align-items: center;
+            &::before{
+                font-family: var(--font);
+                font-weight: 900;
+                content: "\f0c6";
+            }
+        }
+        input[type="file"]{
+            display: none;
+        }
+        &-textarea{
+            flex-grow: 1;
+            border:var(--lightgrey) 1px solid;
+            &:focus{
+                outline: 0;
+                box-shadow: inset 0 2px 2px rgba(0,0,0,.075), 0 0 4px lighten($green, 50);
+            }
+        }
+        &-submit{
+            &::before{
+                font-family: var(--font);
+                font-weight: 900;
+                content: "\f27a";
+            }
+        }
+    }
+}
