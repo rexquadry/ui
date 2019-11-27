@@ -5,9 +5,6 @@
   --grey: #999;
   --lightgrey: #dedede;
   --lightblue: #579b9f;
-  --font:"Font Awesome 5 Free";
-  --box-shadow:1px 2px var(--grey);
-  max-width: 60em;
   height: 100vh;
   color: var(--main-color);
   background-color: transparent;
@@ -26,8 +23,8 @@
 .qchat-wrapper {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: auto 1fr auto auto;
-      grid-template-rows: auto 1fr auto auto;
+  -ms-grid-rows: auto 1fr auto;
+      grid-template-rows: auto 1fr auto;
   background-color: var(--lightgrey);
   height: 100vh;
   border: var(--lightgrey) 1px solid;
@@ -42,14 +39,12 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: #b3ffb3;
+  background-color: #e6ffe6;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   padding: 0 1em;
-  border-bottom: var(--bg-colr) 1px solid;
-  -webkit-box-shadow: var(--box-shadow);
-          box-shadow: var(--box-shadow);
+  border-bottom: var(--bg-color) 1px solid;
 }
 
 .qchat-nav #qchat-nav, .qchat-nav .qchat-nav-list {
@@ -57,7 +52,7 @@
 }
 
 .qchat-nav-trigger::before {
-  font-family: var(--font);
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f0c9";
 }
@@ -74,7 +69,7 @@
 }
 
 .qchat-view-tools > li button::before {
-  font-family: var(--font);
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
 }
 
@@ -91,11 +86,8 @@
 }
 
 .qchat-body {
-  position: relative;
   padding: 1em;
   overflow: auto;
-  -webkit-box-shadow: var(--box-shadow);
-          box-shadow: var(--box-shadow);
 }
 
 .qchat-chatlist {
@@ -122,8 +114,6 @@
   padding: 0.5em;
   border-radius: 0.5em;
   border-bottom: var(--lightgrey) 1px solid;
-  -webkit-box-shadow: var(--box-shadow);
-          box-shadow: var(--box-shadow);
 }
 
 .qchat-chatlist > li.your-post {
@@ -163,7 +153,7 @@
 }
 
 .qchat-chatlist-time::before {
-  font-family: var(--font);
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f017";
 }
@@ -173,18 +163,6 @@
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: body;
-}
-
-.qchat-typing {
-  position: absolute;
-}
-
-.qchat-typing::before {
-  font-family: var(--font);
-  font-weight: 900;
-  content: "\f141";
-  color: var(--grey);
-  margin-left: 1em;
 }
 
 .qchat-communicate {
@@ -213,7 +191,7 @@
 }
 
 .qchat-communicate-selectfile::before {
-  font-family: var(--font);
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f0c6";
 }
@@ -229,14 +207,8 @@
   border: var(--lightgrey) 1px solid;
 }
 
-.qchat-communicate-textarea:focus {
-  outline: 0;
-  -webkit-box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.075), 0 0 4px #80ff80;
-          box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.075), 0 0 4px #80ff80;
-}
-
 .qchat-communicate-submit::before {
-  font-family: var(--font);
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f27a";
 }

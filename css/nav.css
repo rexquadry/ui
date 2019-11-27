@@ -1,0 +1,214 @@
+body {
+  --main-color: #333;
+  --bg-color: #ffffff;
+  --grey: #999;
+  --lightgrey: #dedede;
+  --lightblue: #579b9f;
+  color: var(--main-color);
+  font-size: 14px;
+  overflow-x: hidden;
+}
+
+body a {
+  text-decoration: none;
+}
+
+body ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+nav {
+  --collapse-width: 240px;
+  min-height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* position: relative; */
+  border-bottom: var(--grey) 1px solid;
+}
+
+nav .collapsible-trigger {
+  cursor: pointer;
+}
+
+nav .collapsible-trigger::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 1.5rem;
+  content: "\f0c9";
+}
+
+nav #collapsible {
+  /* display: none; */
+  position: absolute;
+  top: 0;
+  left: 100vw;
+  width: var(--collapse-width);
+  height: 100vh;
+  background-color: var(--lightblue);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav #collapsible, nav #collapsible .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+nav #collapsible .nav li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  padding: 1em;
+  color: var(--bg-color);
+  border-bottom: var(--grey) 1px solid;
+}
+
+nav #collapsible .nav li .subnav {
+  background-color: #335b5d;
+  display: none;
+}
+
+nav #collapsible .nav li.has-children > a::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #335b5d;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f107";
+}
+
+nav #collapsible .nav li.has-children.opened .subnav {
+  display: block;
+}
+
+nav #collapsible .nav li.has-children.opened > a::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f106";
+}
+
+nav #collapsible .search-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1em;
+  color: var(--grey);
+}
+
+nav #collapsible .search-form input[type="search"] {
+  height: 2em;
+  width: 100%;
+  padding: 0.5em 2em 0.5em 1em;
+  border-radius: 2em;
+  border: none;
+}
+
+nav #collapsible .search-form button {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 1em;
+}
+
+nav #collapsible .search-form button::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f002";
+}
+
+nav #collapsible .socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 1em;
+  margin: 0;
+  margin-top: auto;
+  border-top: var(--grey) 1px solid;
+}
+
+nav #collapsible .socials li a {
+  color: var(--bg-color);
+}
+
+nav #collapsible .socials li a::before {
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 900;
+  content: "\f099";
+}
+
+nav #collapsible .socials li.facebook a::before {
+  content: "\f39e";
+}
+
+nav #collapsible .socials li.youtube a::before {
+  content: "\f167";
+}
+
+nav #collapsible .socials li.github a::before {
+  content: "\f09b";
+}
+
+nav #collapsible-trigger {
+  display: none;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+nav #collapsible-trigger:checked + .collapsible-trigger {
+  position: absolute;
+  /* transform: translateX(calc(100vw - 260px)); */
+  margin-right: calc(var(--collapse-width) + 1em);
+  right: 0;
+}
+
+nav #collapsible-trigger:checked + .collapsible-trigger::before {
+  content: "\f00d";
+}
+
+nav #collapsible-trigger:checked + label + #collapsible {
+  margin-left: calc(0px - var(--collapse-width));
+}
+/*# sourceMappingURL=nav.css.map */

@@ -1,0 +1,115 @@
+body {
+  padding: 0;
+  margin: 0;
+  color: black;
+  font-size: 14px;
+}
+
+body img {
+  max-width: 100%;
+}
+
+body .main {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 3em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  height: 100vh;
+  padding: 2em 1em;
+}
+
+@media only screen and (min-width: 768px) {
+  body .main {
+    -ms-grid-columns: 1fr minmax(240px, 30vw) 10vmin;
+        grid-template-columns: 1fr minmax(240px, 30vw) 10vmin;
+  }
+}
+
+body .main .quad-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  grid-gap: 1em;
+  /* align-self: center; */
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+body .main .quad-container .quad-container-item {
+  position: relative;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+body .main .quad-container .quad-container-item:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  border: #f0f 2px solid;
+}
+
+body .main .quad-container .quad-container-item > * {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+body .main .quad-container .quad-container-item img {
+  opacity: 0;
+}
+
+body .main .quad-container .quad-container-item p {
+  position: absolute;
+}
+
+body .main .quad-container .quad-container-item::before {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  top: -25%;
+  left: -25%;
+  z-index: -1;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/background.png) 0 0 repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border: black 1px solid;
+}
+
+body .main .quad-container .quad-container-item:hover::before {
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
+
+body .main .quad-container .quad-container-item:first-child::before {
+  background-image: url("/images/analogue-billiard-table-blur-2179865.jpg");
+}
+
+body .main .quad-container .quad-container-item:nth-child(2)::before {
+  background-image: url("/images/color-flora-flower-3014451.jpg");
+}
+
+body .main .quad-container .quad-container-item:nth-child(3)::before {
+  background-image: url("/images/animal-aquatic-aquatic-animal-2156311.jpg");
+}
+
+body .main .quad-container .quad-container-item:last-child::before {
+  background-image: url("/images/architecture-building-evening-3004075.jpg");
+}
+/*# sourceMappingURL=rotate - Copy.css.map */
