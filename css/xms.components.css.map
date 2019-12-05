@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAA;EACT,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,WAAW;EAClC,oBAAoB;CACvB",
+    "sources": [
+        "xms.components.scss"
+    ],
+    "names": [],
+    "file": "xms.components.css"
+}
